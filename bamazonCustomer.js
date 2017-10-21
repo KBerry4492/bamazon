@@ -57,7 +57,7 @@ function shOptions() {
     if (err) throw err;
     var choiceArray = [];
             for (var i = 0; i < res.length; i++) {
-              choiceArray.push(String(res[i].id));
+              choiceArray.push(String(res[i].item));
             }
     // prompt user for what they want to buy
     inquirer
@@ -78,7 +78,7 @@ function shOptions() {
         // get the information of the chosen item
         var chosenItem = {};
         for (var i = 0; i < res.length; i++) {
-          if (res[i].id === parseInt(answer.choice)) {
+          if (res[i].item === answer.choice) {
             chosenItem = res[i];
           }
         }
